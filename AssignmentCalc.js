@@ -13,7 +13,7 @@ const myQuesions = [{
         name: "operations",
         type: "list",
         message: "Select any one Operataor",
-        choices: ["+", "-", "*", "/", "%"]
+        choices: ["+", "-", "*", "/", "%", "power", "sq.Root"]
     }];
 var myAnswers = inquirer.prompt(myQuesions);
 myAnswers.then((answers) => {
@@ -32,6 +32,12 @@ myAnswers.then((answers) => {
             break;
         case "%":
             console.log(`${answers.FirstValue} % ${answers.SecondValue} = ${answers.FirstValue % answers.SecondValue}`);
+            break;
+        case "power":
+            console.log(`${answers.FirstValue} power ${answers.SecondValue} = ${Math.pow(answers.FirstValue, answers.SecondValue)}`);
+            break;
+        case "sq.Root":
+            console.log(`Square Root of ${answers.FirstValue} = ${Math.sqrt(answers.FirstValue)} And Square Root of ${answers.SecondValue} is ${Math.sqrt(answers.SecondValue)}`);
             break;
         default:
             break;
